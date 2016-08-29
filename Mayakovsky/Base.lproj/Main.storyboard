@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Mayakovsky" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,201 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ak-gM-ozb">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Маяковский" id="DVb-ly-08f"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GaC-SM-8kc">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PoemNameCell" rowHeight="80" id="zY5-Px-bcA" customClass="PoemNameCell" customModule="Mayakovsky" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zY5-Px-bcA" id="gVo-OV-PIW">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thf-mO-GjD">
+                                                    <rect key="frame" x="8" y="8" width="584" height="63.5"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="24"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="thf-mO-GjD" firstAttribute="bottom" secondItem="gVo-OV-PIW" secondAttribute="bottomMargin" id="0Mh-RJ-App"/>
+                                                <constraint firstItem="thf-mO-GjD" firstAttribute="trailing" secondItem="gVo-OV-PIW" secondAttribute="trailingMargin" id="Hc5-9g-hdR"/>
+                                                <constraint firstItem="thf-mO-GjD" firstAttribute="top" secondItem="gVo-OV-PIW" secondAttribute="topMargin" id="bAt-cR-y5Q"/>
+                                                <constraint firstItem="thf-mO-GjD" firstAttribute="leading" secondItem="gVo-OV-PIW" secondAttribute="leadingMargin" id="hTL-0Y-PkL"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="name" destination="thf-mO-GjD" id="6Ys-jw-XLx"/>
+                                            <segue destination="Pm9-FS-9oE" kind="show" id="g7r-I5-MVE"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GaC-SM-8kc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="2Pq-zj-hKZ"/>
+                            <constraint firstItem="GaC-SM-8kc" firstAttribute="top" secondItem="7ak-gM-ozb" secondAttribute="bottom" id="3C1-fF-uOG"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GaC-SM-8kc" secondAttribute="bottom" id="Bsb-Dx-u36"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GaC-SM-8kc" secondAttribute="trailing" constant="-20" id="GTv-59-luR"/>
+                            <constraint firstItem="7ak-gM-ozb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="GU7-on-c1q"/>
+                            <constraint firstItem="7ak-gM-ozb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="hYU-rC-cCH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7ak-gM-ozb" secondAttribute="trailing" constant="-20" id="wXN-4v-nUf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="listOfPoemsTable" destination="GaC-SM-8kc" id="g3c-u2-9tV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="309" y="398"/>
+        </scene>
+        <!--PoemViewController-->
+        <scene sceneID="ao9-Xl-HFk">
+            <objects>
+                <viewController title="PoemViewController" id="Pm9-FS-9oE" customClass="PoemViewController" customModule="Mayakovsky" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hN0-S9-kZ5"/>
+                        <viewControllerLayoutGuide type="bottom" id="xc3-8H-QAZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pa4-uT-hx8">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="so9-vR-5x2">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="NIk-0Z-CMX">
+                                        <barButtonItem key="rightBarButtonItem" title="Info" id="P5v-pf-Ajw">
+                                            <connections>
+                                                <segue destination="1JV-Iu-P1f" kind="show" id="WKw-XN-lPc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Ul-H2-wk5">
+                                <rect key="frame" x="39" y="84" width="541" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">Скрипка издергалась, упрашивая,
+и вдруг разревелась
+так по-детски,
+что барабан не выдержал:
+"Хорошо, хорошо, хорошо!"
+А сам устал,
+не дослушал скрипкиной речи,
+шмыгнул на горящий Кузнецкий
+и ушел.
+Оркестр чужо смотрел, как
+выплакивалась скрипка
+без слов,
+без такта,
+и только где-то
+глупая тарелка
+вылязгивала:
+"Что это?"
+"Как это?"
+А когда геликон -
+меднорожий,
+потный,
+крикнул:
+"Дура,
+плакса,
+вытри!" -
+я встал,
+шатаясь, полез через ноты,
+сгибающиеся под ужасом пюпитры,
+зачем-то крикнул:
+"Боже!",
+бросился на деревянную шею:
+"Знаете что, скрипка?
+Мы ужасно похожи:
+я вот тоже
+ору -
+а доказать ничего не умею!"
+Музыканты смеются:
+"Влип как!
+Пришел к деревянной невесте!
+Голова!"
+А мне - наплевать!
+Я - хороший.
+"Знаете что, скрипка?
+Давайте -
+будем жить вместе!
+А?"</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="so9-vR-5x2" secondAttribute="trailing" constant="-20" id="3Dz-lL-x7b"/>
+                            <constraint firstItem="xc3-8H-QAZ" firstAttribute="top" secondItem="1Ul-H2-wk5" secondAttribute="bottom" constant="20" id="HLz-Vp-tLm"/>
+                            <constraint firstItem="so9-vR-5x2" firstAttribute="leading" secondItem="Pa4-uT-hx8" secondAttribute="leadingMargin" constant="-20" id="TeN-k7-9OS"/>
+                            <constraint firstItem="1Ul-H2-wk5" firstAttribute="top" secondItem="so9-vR-5x2" secondAttribute="bottom" constant="20" id="gZB-vO-sYl"/>
+                            <constraint firstItem="1Ul-H2-wk5" firstAttribute="leading" secondItem="Pa4-uT-hx8" secondAttribute="leadingMargin" constant="19" id="t1e-Qg-LIY"/>
+                            <constraint firstItem="so9-vR-5x2" firstAttribute="top" secondItem="hN0-S9-kZ5" secondAttribute="bottom" id="tGG-rK-iH4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Ul-H2-wk5" secondAttribute="trailing" id="tPG-4k-2bq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TbD-wm-sBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1043" y="398"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wNE-g4-Cit">
+            <objects>
+                <viewController id="1JV-Iu-P1f" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YOu-YA-yss"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vrx-CY-TXA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m2L-Ns-0EW">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTC-18-IXY">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="9Cj-C5-gdg">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Gje-fv-47Q"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OZc-DN-14P">
+                                <rect key="frame" x="20" y="84" width="560" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CTC-18-IXY" firstAttribute="top" secondItem="YOu-YA-yss" secondAttribute="bottom" id="0sN-sy-AjD"/>
+                            <constraint firstItem="CTC-18-IXY" firstAttribute="leading" secondItem="m2L-Ns-0EW" secondAttribute="leadingMargin" constant="-20" id="AKR-zd-xa6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CTC-18-IXY" secondAttribute="trailing" constant="-20" id="C8E-8j-vpE"/>
+                            <constraint firstItem="OZc-DN-14P" firstAttribute="top" secondItem="CTC-18-IXY" secondAttribute="bottom" constant="20" id="XfG-lT-DUj"/>
+                            <constraint firstItem="Vrx-CY-TXA" firstAttribute="top" secondItem="OZc-DN-14P" secondAttribute="bottom" constant="20" id="fPQ-8J-NFN"/>
+                            <constraint firstItem="OZc-DN-14P" firstAttribute="leading" secondItem="m2L-Ns-0EW" secondAttribute="leadingMargin" id="lf4-yK-HaW"/>
+                            <constraint firstItem="OZc-DN-14P" firstAttribute="trailing" secondItem="m2L-Ns-0EW" secondAttribute="trailingMargin" id="oox-C6-dwe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gd3-vt-Ypo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1731" y="398"/>
         </scene>
     </scenes>
 </document>
