@@ -103,7 +103,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Ul-H2-wk5">
                                 <rect key="frame" x="39" y="84" width="541" height="496"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <mutableString key="text">Скрипка издергалась, упрашивая,
+                                <string key="text">Скрипка издергалась, упрашивая,
 и вдруг разревелась
 так по-детски,
 что барабан не выдержал:
@@ -148,7 +148,7 @@
 "Знаете что, скрипка?
 Давайте -
 будем жить вместе!
-А?"</mutableString>
+А?"</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

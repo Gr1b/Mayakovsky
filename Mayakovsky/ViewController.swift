@@ -14,10 +14,7 @@ class ViewController: UIViewController {
     let dataSource : PoemsDataSource
     
     required init?(coder aDecoder: NSCoder) {
-        let poems = [
-            Poem(name: "СКРИПКА И НЕМНОЖКО НЕРВНО", text: "Скрипка издергалась, упрашивая", year: "1914", additionlInfo: nil),
-            Poem(name: "2", text: "3", year: nil, additionlInfo: nil)
-        ]
+        let poems = Storage().poems
         dataSource = PoemsDataSource.init(poems: poems)
         super.init(coder: aDecoder)
     }

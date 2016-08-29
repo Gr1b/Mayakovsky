@@ -16,6 +16,9 @@
 		8433D7BD1D74397600D433E7 /* PoemsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D7BC1D74397600D433E7 /* PoemsDataSource.swift */; };
 		8433D7BF1D743A1C00D433E7 /* Poem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D7BE1D743A1C00D433E7 /* Poem.swift */; };
 		8433D7C31D74401900D433E7 /* PoemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D7C21D74401900D433E7 /* PoemViewController.swift */; };
+		8433D7C51D745C1700D433E7 /* poems.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8433D7C41D745C1700D433E7 /* poems.plist */; };
+		8433D7C71D74600900D433E7 /* storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D7C61D74600900D433E7 /* storage.swift */; };
+		8433D7C91D74656300D433E7 /* AdditionalInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8433D7C81D74656300D433E7 /* AdditionalInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		8433D7BC1D74397600D433E7 /* PoemsDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemsDataSource.swift; sourceTree = "<group>"; };
 		8433D7BE1D743A1C00D433E7 /* Poem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Poem.swift; sourceTree = "<group>"; };
 		8433D7C21D74401900D433E7 /* PoemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoemViewController.swift; sourceTree = "<group>"; };
+		8433D7C41D745C1700D433E7 /* poems.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = poems.plist; sourceTree = "<group>"; };
+		8433D7C61D74600900D433E7 /* storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = storage.swift; sourceTree = "<group>"; };
+		8433D7C81D74656300D433E7 /* AdditionalInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,16 +70,35 @@
 			children = (
 				8433D7A41D7432DE00D433E7 /* AppDelegate.swift */,
 				8433D7A61D7432DE00D433E7 /* ViewController.swift */,
-				8433D7A81D7432DE00D433E7 /* Main.storyboard */,
-				8433D7AB1D7432DE00D433E7 /* Assets.xcassets */,
-				8433D7AD1D7432DE00D433E7 /* LaunchScreen.storyboard */,
-				8433D7B01D7432DE00D433E7 /* Info.plist */,
+				8433D7C21D74401900D433E7 /* PoemViewController.swift */,
+				8433D7C81D74656300D433E7 /* AdditionalInfoViewController.swift */,
+				8433D7CB1D74659C00D433E7 /* UI */,
+				8433D7CA1D74657700D433E7 /* Resources */,
 				8433D7B81D74379000D433E7 /* PoemNameCell.swift */,
 				8433D7BC1D74397600D433E7 /* PoemsDataSource.swift */,
 				8433D7BE1D743A1C00D433E7 /* Poem.swift */,
-				8433D7C21D74401900D433E7 /* PoemViewController.swift */,
+				8433D7C61D74600900D433E7 /* storage.swift */,
 			);
 			path = Mayakovsky;
+			sourceTree = "<group>";
+		};
+		8433D7CA1D74657700D433E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8433D7B01D7432DE00D433E7 /* Info.plist */,
+				8433D7C41D745C1700D433E7 /* poems.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8433D7CB1D74659C00D433E7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8433D7A81D7432DE00D433E7 /* Main.storyboard */,
+				8433D7AB1D7432DE00D433E7 /* Assets.xcassets */,
+				8433D7AD1D7432DE00D433E7 /* LaunchScreen.storyboard */,
+			);
+			name = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8433D7AF1D7432DE00D433E7 /* LaunchScreen.storyboard in Resources */,
+				8433D7C51D745C1700D433E7 /* poems.plist in Resources */,
 				8433D7AC1D7432DE00D433E7 /* Assets.xcassets in Resources */,
 				8433D7AA1D7432DE00D433E7 /* Main.storyboard in Resources */,
 			);
@@ -148,10 +174,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8433D7C71D74600900D433E7 /* storage.swift in Sources */,
 				8433D7A71D7432DE00D433E7 /* ViewController.swift in Sources */,
 				8433D7A51D7432DE00D433E7 /* AppDelegate.swift in Sources */,
 				8433D7BD1D74397600D433E7 /* PoemsDataSource.swift in Sources */,
 				8433D7BF1D743A1C00D433E7 /* Poem.swift in Sources */,
+				8433D7C91D74656300D433E7 /* AdditionalInfoViewController.swift in Sources */,
 				8433D7B91D74379000D433E7 /* PoemNameCell.swift in Sources */,
 				8433D7C31D74401900D433E7 /* PoemViewController.swift in Sources */,
 			);
@@ -305,6 +333,7 @@
 				8433D7B51D7432DE00D433E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
